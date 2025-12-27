@@ -2,7 +2,8 @@
 import { GoogleGenAI, GenerateContentResponse, Type } from "@google/genai";
 
 const getAIClient = () => {
-  return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  // Always use a named parameter and obtain API key directly from process.env.API_KEY
+  return new GoogleGenAI({ apiKey: process.env.API_KEY });
 };
 
 export const runPrompt = async (
@@ -59,6 +60,7 @@ export const runStructuredOutput = async (prompt: string, schema: any) => {
         responseSchema: schema
       }
     });
+    // The response object features a text property (not a method) that directly returns the string output.
     return response.text;
   } catch (error) {
     console.error("Structured Output Error:", error);
