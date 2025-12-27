@@ -1,0 +1,8 @@
+{
+  "name": "AI Studio Academy",
+  "description": "A comprehensive interactive guide to mastering Google's AI Studio, covering prompt engineering, model configurations, and advanced features like function calling and grounding.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
